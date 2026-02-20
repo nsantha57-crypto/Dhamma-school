@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siridhamma Dhamma School</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Noto+Sans+Sinhala:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Navigation Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-dharmachakra"></i></div>
+                <h2>Siridhamma<br>Dhamma School</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="active" onclick="switchTab('home')"><i class="fa-solid fa-house"></i> Home</li>
+                <li onclick="switchTab('admin')"><i class="fa-solid fa-user-tie"></i> Administration</li>
+                <li onclick="switchTab('staff')"><i class="fa-solid fa-chalkboard-user"></i> Staff</li>
+                <li onclick="switchTab('leaders')"><i class="fa-solid fa-medal"></i> Student Leaders</li>
+                <li onclick="switchTab('students')"><i class="fa-solid fa-users"></i> Students</li>
+                <li onclick="switchTab('attendance')"><i class="fa-solid fa-calendar-check"></i> Attendance</li>
+                <li onclick="switchTab('activities')"><i class="fa-solid fa-hands-praying"></i> Activities & Merit</li>
+                <li onclick="switchTab('settings')" style="margin-top: auto;"><i class="fa-solid fa-cog"></i> Settings &
+                    Backup</li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Home Section -->
+            <section id="home" class="tab-content active">
+                <div class="hero">
+                    <div class="hero-content">
+                        <h1>Welcome to Siridhamma Dhamma School</h1>
+                        <p class="motto">"Creating a blessed generation of children who love the country and nation and
+                            respect the Dhamma"</p>
+                        <p class="sinhala-motto">"රටට දැයට ආදරය කරන දහමට ගරු කරන පින්වත් දරු පරපුරක් බිහි කිරීම"</p>
+                    </div>
+                    <div class="hero-image-placeholder">
+                        <div class="placeholder-text">
+                            <i class="fa-regular fa-image"></i>
+                            <p>Insert Siridhamma School Photo Here</p>
+                            <span>(Image Size: 800x400px Recommended)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-cards">
+                    <div class="card">
+                        <h3>Vision</h3>
+                        <p>To be the beacon of Dhamma education, fostering discipline and wisdom.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Mission</h3>
+                        <p> Cultivate disciplined, Dharma-devoted, and valuable citizens.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Administration Section -->
+            <section id="admin" class="tab-content">
+                <h2><i class="fa-solid fa-user-tie"></i> Administration</h2>
+                <div class="admin-grid">
+                    <div class="role-card principal">
+                        <h3>Principal (Pradhanacharya)</h3>
+                        <div id="school-principal-name" class="editable-field" contenteditable="true">[Enter Name Here]
+                        </div>
+                        <h4>Responsibilities</h4>
+                        <ul id="school-principal-duties" class="duties-list" contenteditable="true">
+                            <li>Overall administration and management.</li>
+                            <li>Ensuring academic quality and discipline.</li>
+                            <li>[Add more duties here]</li>
+                        </ul>
+                    </div>
+
+                    <div class="role-card vice-principal">
+                        <h3>Vice Principal (Upa Pradhanacharya)</h3>
+                        <div id="school-vp-name" class="editable-field" contenteditable="true">[Enter Name Here]</div>
+                        <h4>Responsibilities</h4>
+                        <ul id="school-vp-duties" class="duties-list" contenteditable="true">
+                            <li>Assisting the Principal in daily operations.</li>
+                            <li>Managing student affairs.</li>
+                            <li>[Add more duties here]</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Specialized Roles</h3>
+                <div class="special-roles-grid">
+                    <div class="role-card">
+                        <h4>Discipline Master (Winaya Bara)</h4>
+                        <div id="role-discipline" class="editable-field" contenteditable="true">[Enter Name Here]</div>
+                    </div>
+                    <div class="role-card">
+                        <h4>Abhidharma Teacher</h4>
+                        <div id="role-abhidharma" class="editable-field" contenteditable="true">[Enter Name Here]</div>
+                    </div>
+                    <div class="role-card">
+                        <h4>Pali Language Teacher</h4>
+                        <div id="role-pali" class="editable-field" contenteditable="true">[Enter Name Here]</div>
+                    </div>
+                    <div class="role-card">
+                        <h4>Student Leader In-charge Teacher</h4>
+                        <div id="role-prefect-master" class="editable-field" contenteditable="true">[Enter Name Here]
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Staff Section -->
+            <section id="staff" class="tab-content">
+                <h2><i class="fa-solid fa-chalkboard-user"></i> Staff Directory</h2>
+                <div class="table-container">
+                    <h3>Teacher Name List (Guruwarunge Namalekanaya)</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Class In-Charge</th>
+                                <th>Subject</th>
+                            </tr>
+                        </thead>
+                        <tbody id="teacher-list-body">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                    <button class="add-btn" onclick="addRow('teacher-list-body')"><i class="fa-solid fa-plus"></i> Add
+                        Teacher</button>
+                </div>
+            </section>
+
+            <!-- Student Leaders Section -->
+            <section id="leaders" class="tab-content">
+                <h2><i class="fa-solid fa-medal"></i> Student Leadership (Shishya Nayaka Mandalaya)</h2>
+
+                <div class="leaders-roles">
+                    <div class="role-description">
+                        <h3>Head Prefect & Deputy Roles</h3>
+                        <p class="subtitle">Duties & Responsibilities (Karyabharaya)</p>
+                        <div id="prefect-duties" class="editable-area" contenteditable="true">
+                            <p><strong>Head Prefect:</strong> Lead the student body, maintain discipline, coordinate
+                                events.</p>
+                            <p><strong>Deputy Head:</strong> Assist the Head Prefect, oversee junior prefects.</p>
+                            <p>[Edit duties here...]</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <h3>Prefect Name List (20 Members) & Positions</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Position (Head, Deputy, Assistant)</th>
+                                <th>Student Name</th>
+                            </tr>
+                        </thead>
+                        <tbody id="prefect-list-body">
+                            <!-- Populated by JS - Needs 20 slots -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Students Section -->
+            <section id="students" class="tab-content">
+                <h2><i class="fa-solid fa-users"></i> Student Registry</h2>
+                <div class="table-container">
+                    <h3>Student Name List (Sisunge Namalekanaya)</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Grade</th>
+                                <th>Guardian Name</th>
+                            </tr>
+                        </thead>
+                        <tbody id="student-list-body">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                    <button class="add-btn" onclick="addRow('student-list-body')"><i class="fa-solid fa-plus"></i> Add
+                        Student</button>
+                </div>
+            </section>
+
+            <!-- Attendance Section -->
+            <section id="attendance" class="tab-content">
+                <h2><i class="fa-solid fa-calendar-check"></i> Attendance (Pemineeme Namalekana)</h2>
+
+                <div class="attendance-tabs">
+                    <button class="sub-tab active" onclick="switchSubTab('student-attendance')">Students</button>
+                    <button class="sub-tab" onclick="switchSubTab('teacher-attendance')">Teachers</button>
+                    <button class="sub-tab" onclick="switchSubTab('prefect-attendance')">Prefects</button>
+                </div>
+
+                <div id="student-attendance" class="sub-tab-content active">
+                    <h3>Student Daily Attendance</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>Grade</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="std-att-body">
+                            <!-- Rows -->
+                        </tbody>
+                    </table>
+                    <button class="add-btn" onclick="addAttendanceRow('std-att-body')"><i class="fa-solid fa-plus"></i>
+                        Add Record</button>
+                </div>
+
+                <div id="teacher-attendance" class="sub-tab-content">
+                    <h3>Teacher Daily Attendance</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>Time In</th>
+                                <th>Signature</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tch-att-body">
+                            <!-- Rows -->
+                        </tbody>
+                    </table>
+                    <button class="add-btn" onclick="addAttendanceRow('tch-att-body')"><i class="fa-solid fa-plus"></i>
+                        Add Record</button>
+                </div>
+
+                <div id="prefect-attendance" class="sub-tab-content">
+                    <h3>Prefect Daily Attendance</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>Duty Area</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="prf-att-body">
+                            <!-- Rows -->
+                        </tbody>
+                    </table>
+                    <button class="add-btn" onclick="addAttendanceRow('prf-att-body')"><i class="fa-solid fa-plus"></i>
+                        Add Record</button>
+                </div>
+            </section>
+
+            <!-- Activities Section -->
+            <section id="activities" class="tab-content">
+                <h2><i class="fa-solid fa-hands-praying"></i> Activities, Merit & Awards</h2>
+
+                <div class="activities-grid">
+                    <div class="activity-box">
+                        <h3>Flower Offering (Malwatti Genena Lamun)</h3>
+                        <table class="data-table small-table">
+                            <thead>
+                                <tr>
+                                    <th>Student Name</th>
+                                    <th>Class</th>
+                                    <th>Marks</th>
+                                </tr>
+                            </thead>
+                            <tbody id="flower-list-body">
+                                <tr>
+                                    <td contenteditable="true">[Name]</td>
+                                    <td contenteditable="true">[Class]</td>
+                                    <td contenteditable="true">[Marks]</td>
+                                </tr>
+                                <!-- JS will replicate -->
+                            </tbody>
+                        </table>
+                        <button class="add-btn" onclick="addGenericRow('flower-list-body', 3)"><i
+                                class="fa-solid fa-plus"></i> Add</button>
+                    </div>
+                </div>
+
+                <div class="awards-section">
+                    <h3><i class="fa-solid fa-trophy"></i> Awards & Certificates</h3>
+                    <div class="awards-container">
+                        <div class="award-card gold">
+                            <h4>Top 3 Scorers (Grade Wise)</h4>
+                            <ul class="award-list" contenteditable="true">
+                                <li>1. __________________</li>
+                                <li>2. __________________</li>
+                                <li>3. __________________</li>
+                            </ul>
+                        </div>
+                        <div class="award-card silver">
+                            <h4>Daily Attendance Award</h4>
+                            <ul class="award-list" contenteditable="true">
+                                <li>__________________</li>
+                                <li>__________________</li>
+                            </ul>
+                        </div>
+                        <div class="award-card bronze">
+                            <h4>Highest Flower Marks</h4>
+                            <ul class="award-list" contenteditable="true">
+                                <li>__________________</li>
+                            </ul>
+                        </div>
+                        <div class="award-card blue">
+                            <h4>Best Discipline</h4>
+                            <ul class="award-list" contenteditable="true">
+                                <li>__________________</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="tab-content">
+                <h2><i class="fa-solid fa-cog"></i> Settings & Data Management</h2>
+                <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
+                    <h3>Manage Your Data</h3>
+                    <p>Use these buttons to save your data to a file (Backup) or load data from a previous year
+                        (Restore).</p>
+                    <div style="display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
+                        <button class="add-btn" onclick="exportData()" style="background: #4caf50;"><i
+                                class="fa-solid fa-download"></i> Backup Data (Save to File)</button>
+                        <button class="add-btn" onclick="document.getElementById('fileInput').click()"
+                            style="background: #2196f3;"><i class="fa-solid fa-upload"></i> Restore Data (Load from
+                            File)</button>
+                        <input type="file" id="fileInput" style="display: none;" onchange="importData(this)">
+                    </div>
+                    <p style="margin-top: 20px; font-size: 0.9em; color: #777;">Note: This browser-based app saves
+                        changes automatically, but backups are recommended before making large changes or changing
+                        years.</p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Load Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
